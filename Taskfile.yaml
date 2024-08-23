@@ -1,0 +1,13 @@
+version: "3"
+
+tasks:
+  setup-dev:
+    cmds:
+      - node --version
+      - npm install -g npm@latest
+      - npm install -g @commitlint/cli @commitlint/config-conventional
+
+  cover:
+    cmds:
+      - go test -coverprofile=${TMPDIR}/c.out ./...
+      - go tool cover -html="${TMPDIR}/c.out"
