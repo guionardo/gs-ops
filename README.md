@@ -19,6 +19,9 @@ name: test-project
 description: "Description of the project"
 repository-url: https://github.com/guionardo/project
 deploy-branch: main
+deploy-trigger:
+  - push
+  - merge
 ```
 
 .gsops/host.yaml
