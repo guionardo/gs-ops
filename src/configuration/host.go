@@ -1,3 +1,4 @@
 package configuration
 
-type HostConfiguration struct{}
+type HostConfiguration struct {
+}
