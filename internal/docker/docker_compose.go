@@ -46,10 +46,8 @@ func GetLabels(fileName string) (labels map[string]string, err error) {
 		err = fmt.Errorf("'services' key is not a dictionary")
 		return
 	}
-	fmt.Printf("Services: %v\n", servicesMap)
 	labels = make(map[string]string)
-	for key, value := range servicesMap {
-		fmt.Printf("  %s = %v", key, value)
+	for _, value := range servicesMap {
 		if labelsRaw, ok := value.(map[string]interface{})["labels"]; ok {
 			if labelsMap, ok := labelsRaw.(map[string]interface{}); ok {
 				for label, labelValue := range labelsMap {
@@ -59,7 +57,6 @@ func GetLabels(fileName string) (labels map[string]string, err error) {
 		}
 	}
 
-	fmt.Printf("Resulting struct: %#v\n", fileMap)
 	return
 }
 
