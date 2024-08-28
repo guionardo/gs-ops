@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  web:
+    image: web
+    labels:
+        de.zalando.gridRole: "this label will appear on the container"
+        gsops.app: "This label will appear on the web service"
+
+
+  backend:
+    image: web
+    labels:
+        de.zalando.gridRole: "this label will appear on the container"
+    deploy:
+      labels:
+        com.example.description: "This label will appear on the web service"
