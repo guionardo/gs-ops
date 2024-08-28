@@ -54,7 +54,7 @@ end
 note left of con: CLI operations
 
 note over con: Local setup
-con -->> +cli: 
+con -->> +cli: .
 cli ->> fs : Parse arguments <br>and save files
 cli -->> -con: Show project data
 
@@ -63,10 +63,10 @@ con -->> +cli: Receive host API-KEY, github API-TOKEN
 cli -->> backend: Send credentials for project
 backend -->> gh: Validate API-TOKEN
 backend -->> cli: Return status
-cli -->> -con: Show status 
+cli -->> -con: Show status
 
 note over con: Publish setup
-con -->> +cli: 
+con -->> +cli: .
 cli ->> backend: Send project data
 backend ->> gh: Setup webhook
 gh -->> backend: Return status
@@ -76,7 +76,7 @@ backend -->> cli: Return status
 cli -->> -con: Shows project publish<br>information
 
 note over con: Apply deploy
-con -->> +cli: 
+con -->> +cli: .
 cli ->> backend: Apply deploy,<br> or drop container
 backend -->> frontend: Notify<br>start apply data
 alt deploy
@@ -95,7 +95,7 @@ backend -->> cli: Return status
 cli -->> -con: Shows apply status
 
 con -->> +cli : Get log from running application
-cli ->> backend : 
+cli ->> backend : .
 backend ->> docker : Get log
 docker --> backend : Return log
 backend --> cli : Return log
@@ -112,7 +112,7 @@ C4Context
       title GS-OPS SAAS OPS Tool
       Enterprise_Boundary(external, "External"){
           System_Ext(gh, "GitHub")
-        
+
       }
 
 System_Boundary(local,"Local development environment"){
@@ -130,7 +130,10 @@ Rel(cli,backend,"Deploy rules setup","HTTP")
 Rel(git,gh,"commit")
 Rel(gh,backend,"Notifies","webhook")
 Rel(backend,docker,"Run deploy")
-    
+
 
 ```
 
+## Links
+
+* https://betterstack.com/community/guides/logging/logging-in-go/

@@ -6,6 +6,8 @@ tasks:
       - node --version
       - npm install -g npm@latest
       - npm install -g @commitlint/cli @commitlint/config-conventional
+      - go install github.com/go-swagger/go-swagger/cmd/swagger@latest
+      - go install github.com/swaggo/swag/cmd/swag@latestswag
 
   cover:
     cmds:
