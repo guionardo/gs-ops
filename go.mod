@@ -5,6 +5,7 @@ go 1.23.0
 require (
 	github.com/docker/docker v27.1.2+incompatible
 	github.com/ghodss/yaml v1.0.0
+	github.com/hashicorp/go-version v1.7.0
 )
 
 require (
